@@ -100,4 +100,31 @@ O sistema foi desenvolvido utilizando vetores de struct, conforme os requisitos 
 Fila Normal: implementada como uma fila simples utilizando um vetor de registros.<br>
 Fila Preferencial: implementada como uma fila circular utilizando um vetor de registros.<br>
 
-Cada registro de atendimento possui os seguintes campos: <strong>senha, tipo, horario</strong>
+Cada registro de atendimento possui os seguintes campos: <strong>senha, tipo, horario</strong>.
+
+Observação: Foi feito o extra de função para estatisticas.
+
+### Funcionalidades: 
+
+|Opção| Descrição |
+|------|--------|
+| 1 | Gerar Senha |
+| 2 | Chamar proxima senha |
+| 3 | Exibir filas |
+| 4 | Buscar senha |
+| 5 | Cancelar senha |
+| 6 | Estatisticas |
+| 0 | Sair |
+
+### Como Compilar e Executar:
+Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
+
+No VS Code:
+```bash
+gcc main.c -o playlist
+.\playlist.exe
+```
+No Windows: playlist.exe
+
+
+
