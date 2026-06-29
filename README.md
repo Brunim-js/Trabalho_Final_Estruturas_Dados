@@ -40,7 +40,7 @@ Sistema de gerenciamento de uma playlist musical implementado com vetor de struc
 
 Cada registro de música contém os seguintes campos: <strong>ID, título, artista, duração (MM:SS) e gênero<strong>.
 
-## Funcionalidades:
+### Funcionalidades:
 
 |Opção| Descrição |
 |------|--------|
@@ -50,3 +50,6 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 | 4 | Excluir Musica |
 | 5 | Listar Musicas |
 | 0 | Encerrar o Programa (Salva Automaticamente) |
+
+### Como Compilar e Executar: 
+
