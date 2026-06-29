@@ -6,4 +6,10 @@ Professor: Nirton Afonso
 
 ---
 
-# Integrantes:
+## Integrantes:
+
+| Nome | Turma |
+|------|--------|
+| Gabriel Oliveira | SI 2026.1 |
+| Gabriel Nascimento | SI 2026.1 |
+| Pedro Gustavo Pereira Barbosa da Cruz | SI 2026.1 |
