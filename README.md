@@ -1,4 +1,4 @@
-# Trabalho_Final_Estruturas_Dados
+# Trabalho Final -Estruturas Dados
 
 Repositório do grupo para entrega do trabalho final da disciplina Estruturas de Dados.<br>
 Curso: Sistemas de Informação – UniJorge<br>
@@ -28,7 +28,7 @@ Professor: Nirton Afonso
 
 ## Sobre a Versão Entregue:
 
-Seguindo as orientações do professor (18/06/2026), posteriormente reforçadas, este projeto foi desenvolvido utilizando vetores de struct para implementar listas simples, pilhas simples e filas simples/circulares, não havendo necessidade de alocação dinâmica.
+Seguindo as orientações do professor (18/06/2026), posteriormente reforçadas, este projeto foi desenvolvido utilizando vetores de `struct` para implementar listas simples, pilhas simples e filas simples/circulares, não havendo necessidade de alocação dinâmica.
 
 ---
 
@@ -42,8 +42,8 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 
 ### Funcionalidades:
 
-|Opção| Descrição |
-|------|--------|
+| Opção | Descrição |
+|:-----:|-----------|
 | 1 | Cadastrar |
 | 2 | Buscar musica |
 | 3 | Editar musica |
@@ -52,7 +52,7 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 | 0 | Encerrar o programa |
 
 ### Como Compilar e Executar: 
-Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
+Certifique-se de ter instalado o compilador MSYS2 UCRT64 e execute:<br>
 
 No VS Code:
 ```bash
@@ -63,7 +63,7 @@ No Windows: playlist.exe
 
 ---
 
-## Trabalho B - Chamadas de Emergências 
+## Trabalho B - Chamadas de Emergência
 
 ### Descrição: 
 
@@ -71,8 +71,8 @@ O programa simula uma pilha de chamadas de emergência utilizando o comportament
 
 ### Funcionalidades: 
 
-|Opção| Descrição |
-|------|--------|
+| Opção | Descrição |
+|:-----:|-----------|
 | 1 | Registrar chamada |
 | 2 | Atender Chamada |
 | 3 | Consultar topo |
@@ -84,10 +84,10 @@ O programa simula uma pilha de chamadas de emergência utilizando o comportament
 
 ### Como Compilar e Executar: 
 Pelo aplicativo CLion:<br>
-Certifique-se de ter o CLion 2026.1.3 e execute o codigo.<br>
+Certifique-se de ter o CLion 2026.1.3 e execute o código.<br>
 
 Pelo VS Code:<br>
-Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
+Certifique-se de ter instalado o compilador MSYS2 UCRT64 e execute:<br>
 
 ```bash
 gcc chamadas_emergencia.c -o chamadas_emergencia
@@ -108,12 +108,12 @@ Fila Preferencial: implementada como uma fila circular utilizando um vetor de re
 
 Cada registro de atendimento possui os seguintes campos: <strong>senha, tipo, horario</strong>.
 
-Observação: Foi feito o extra de função para estatisticas.
+Como funcionalidade extra, o sistema possui um módulo de estatísticas dos atendimentos realizados.
 
 ### Funcionalidades: 
 
-|Opção| Descrição |
-|------|--------|
+| Opção | Descrição |
+|:-----:|-----------|
 | 1 | Gerar senha |
 | 2 | Chamar proxima senha |
 | 3 | Exibir filas |
@@ -123,7 +123,7 @@ Observação: Foi feito o extra de função para estatisticas.
 | 0 | Sair |
 
 ### Como Compilar e Executar:
-Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
+Certifique-se de ter instalado o compilador MSYS2 UCRT64 e execute:<br>
 
 No VS Code:
 ```bash
@@ -136,8 +136,8 @@ No Windows: Trabalho_C.exe
 
 ## Observações Sobre o Funcionamento: 
 
-- Todos os programas carregam e salvam os dados CSV automaticamente.
-- A capacidade máxima de todos os projetos é de 100 registros e avisa quando chega ao maximo.
+- Todos os programas realizam o carregamento e o salvamento automático dos dados em arquivos CSV.
+- A capacidade máxima de todos os projetos é de 100 registros e avisa quando chega ao máximo.
 
 
 
