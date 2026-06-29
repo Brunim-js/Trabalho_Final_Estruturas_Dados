@@ -49,4 +49,4 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 | 3 | Editar Musica |
 | 4 | Excluir Musica |
 | 5 | Listar Musicas |
-| 0 | Encerrar o Programa |
+| 0 | Encerrar o Programa (Salva Automaticamente) |
