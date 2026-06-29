@@ -23,3 +23,9 @@ Professor: Nirton Afonso
 | A - Lista Simples | A1 - Playlist de musicas |
 | B - Pilha Simples | B2 - Chamadas de Emergências |
 | C - Fila Simples (FIFO e Circular) | C1 - Atendimento Bancario |
+
+---
+
+## Sobre a Versão Entregue:
+
+Seguindo as orientações do professor (18/06/2026), posteriormente reforçadas, este projeto foi desenvolvido utilizando vetores de struct para implementar listas simples, pilhas simples e filas simples/circulares, não havendo necessidade de alocação dinâmica.
