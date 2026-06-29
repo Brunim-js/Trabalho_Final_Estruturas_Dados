@@ -126,10 +126,12 @@ gcc Trabalho_C.c -o Trabalho_C
 ```
 No Windows: Trabalho_C.exe
 
+---
+
 ## Observações Sobre o Funcionamento: 
 
 - Todos os programas carregam e salvam os dados CSV automaticamente.
-- A capacidade máxima de todos os projetos é de 100 registros e avisa quando chega ao maximo
+- A capacidade máxima de todos os projetos é de 100 registros e avisa quando chega ao maximo.
 
 
 
