@@ -20,6 +20,6 @@ Professor: Nirton Afonso
 
 | Trabalho | Tema |
 |------|--------|
-| A - Lista Simples | A1 - PLaylist de musicas |
+| A - Lista Simples | A1 - Playlist de musicas |
 | B - Pilha Simples | B2 - Chamadas de Emergências |
 | C - Fila Simples (FIFO e Circular) | C1 - Atendimento Bancario |
