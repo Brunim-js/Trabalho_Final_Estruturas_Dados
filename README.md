@@ -57,7 +57,7 @@ Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
 No VS Code:
 ```bash
 gcc main.c -o playlist
-.\playlist.exe
+.\playlist
 ```
 No Windows: playlist.exe
 
