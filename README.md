@@ -121,10 +121,10 @@ Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
 
 No VS Code:
 ```bash
-gcc main.c -o playlist
-.\playlist.exe
+gcc Trabalho_C.c -o Trabalho_C
+.\Trabalho_C
 ```
-No Windows: playlist.exe
+No Windows: Trabalho_C.exe
 
 
 
