@@ -52,7 +52,7 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 | 0 | Encerrar o programa |
 
 ### Como Compilar e Executar: 
-Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
+Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
 
 No VS Code:
 ```bash
@@ -83,10 +83,12 @@ O programa simula uma pilha de chamadas de emergência utilizando o comportament
 
 
 ### Como Compilar e Executar: 
-Pelo aplicativo CLion<br>.
-Certifique-se de ter o CLion 2026.1.3 e execute o codigo <br>
+Pelo aplicativo CLion:<br>
+Certifique-se de ter o CLion 2026.1.3 e execute o codigo.<br>
 
-Pelo VS Code: 
+Pelo VS Code:<br>
+Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
+
 ```bash
 bla bla bla
 ```
@@ -120,7 +122,7 @@ Observação: Foi feito o extra de função para estatisticas.
 | 0 | Sair |
 
 ### Como Compilar e Executar:
-Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
+Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
 
 No VS Code:
 ```bash
