@@ -76,8 +76,8 @@ O Trabalho C consiste na implementação de um sistema de atendimento bancário 
 
 ### 4.2 Estrutura de Dados
 
-O sistema utiliza dois vetores de struct, ambos com capacidade máxima de 100 registros.
-Cada atendimento possui os seguintes campos:
+O sistema utiliza uma única `struct` denominada Atendimento, responsável por armazenar as informações de cada registro. A partir dessa estrutura são declarados dois vetores, `filaNormal` e `filaPreferencial`, ambos com capacidade máxima de 100 atendimentos.<br>
+Cada atendimento é composto pelos seguintes campos:
 
 - Senha
 - Tipo de atendimento
@@ -88,7 +88,7 @@ A fila convencional foi implementada utilizando uma fila simples, enquanto a fil
 ### 4.3 Funcionamento
 
 Sempre que uma nova senha é gerada, ela é direcionada para a fila correspondente ao seu tipo de atendimento.
-Durante o atendimento, o sistema verifica inicialmente a fila preferencial. Caso existam senhas aguardando atendimento, elas possuem prioridade sobre a fila convencional. Somente quando a fila preferencial estiver vazia os atendimentos convencionais são realizados.
+Durante o atendimento, o sistema aplica uma regra de prioridade entre as filas. Enquanto houver senhas nas filas normal e preferencial, são realizados dois atendimentos da fila normal e, em seguida, um atendimento da fila preferencial. Caso uma das filas esteja vazia, os atendimentos passam a ser realizados exclusivamente pela fila que ainda possui senhas aguardando atendimento.
 
 Além das operações básicas de gerenciamento das filas, foi implementado um módulo adicional de estatísticas para consulta das informações referentes aos atendimentos realizados.
 
@@ -103,3 +103,24 @@ Além das operações básicas de gerenciamento das filas, foi implementado um m
 | Cancelar senha | O(n) |
 | Estatísticas | O(n) |
 
+## 5. Persistência dos Dados
+
+Os três projetos utilizam arquivos no formato CSV para armazenar as informações registradas durante a execução.
+
+Ao iniciar o programa, os dados previamente armazenados são carregados automaticamente para a memória. Durante o encerramento, todas as alterações realizadas são gravadas novamente no arquivo CSV, garantindo a persistência das informações entre diferentes execuções.
+
+
+## 6. Testes Realizados
+
+Os sistemas foram submetidos a testes funcionais contemplando as principais operações implementadas em cada estrutura de dados.
+
+Entre os testes realizados destacam-se:
+
+- Inserção de registros em estruturas vazias;
+- Inserção de múltiplos registros;
+- Busca de registros existentes e inexistentes;
+- Exclusão de registros;
+- Consulta das estruturas após alterações;
+- Verificação do limite máximo de 100 registros;
+- Salvamento e carregamento automático dos arquivos CSV;
+- Validação da integridade dos dados após reinicialização dos programas.
