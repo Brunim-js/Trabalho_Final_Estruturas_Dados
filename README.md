@@ -13,3 +13,13 @@ Professor: Nirton Afonso
 | Gabriel Oliveira | SI 2026.1 |
 | Gabriel Nascimento | SI 2026.1 |
 | Pedro Gustavo Pereira Barbosa da Cruz | SI 2026.1 |
+
+---
+
+## Temas escolhidos:
+
+| Trabalho | Tema |
+|------|--------|
+| A - Lista Simples | A1 - PLaylist de musicas |
+| B - Pilha Simples | B2 - Chamadas de Emergências |
+| C - Fila Simples (FIFO e Circular) | C1 - Atendimento Bancario |
