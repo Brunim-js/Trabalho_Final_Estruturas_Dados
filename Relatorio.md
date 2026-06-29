@@ -98,8 +98,8 @@ Além das operações básicas de gerenciamento das filas, foi implementado um m
 |:---------|:------------:|
 | Gerar senha | O(1) |
 | Chamar próxima senha | O(1) |
+| Exibir filas | O(n) |
 | Buscar senha | O(n) |
 | Cancelar senha | O(n) |
-| Exibir filas | O(n) |
 | Estatísticas | O(n) |
 
