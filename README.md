@@ -67,5 +67,25 @@ No Windows: playlist.exe
 
 ### Descrição: 
 
-O programa simula uma pilha de chamadas de emergência utilizando o comportamento LIFO (Last In, First Out). Permite registrar, atender, consultar e listar chamadas, além de salvar e carregar automaticamente os dados em um arquivo CSV para garantir sua persistência.
+O programa simula uma pilha de chamadas de emergência utilizando o comportamento LIFO (Last In, First Out). Permite registrar, atender, consultar e listar chamadas, além de salvar e carregar automaticamente os dados em um arquivo CSV para garantir sua persistência. Capacidade máxima de 100 chamadas.
+
+### Funcionalidades: 
+
+|Opção| Descrição |
+|------|--------|
+| 1 | bla |
+| 2 | ble |
+| 3 | bli |
+| 4 | blo |
+| 5 | blu |
+| 0 |blx |
+
+
+### Como Compilar e Executar: 
+Certifique-se de ter o GCC instalado. No terminal, execute: <br>
+
+```bash
+bla bla bla
+```
+No Windows: alguma coisa.exe
 
