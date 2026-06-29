@@ -99,7 +99,4 @@ O sistema foi desenvolvido utilizando vetores de struct, conforme os requisitos 
 
 Fila Normal: implementada como uma fila simples utilizando um vetor de registros.<br>
 Fila Preferencial: implementada como uma fila circular utilizando um vetor de registros.<br>
-Cada registro de atendimento possui os seguintes campos:<br>
-senha (int) – número da senha de atendimento.<br>
-tipo {(char)} – identifica se a senha é Normal (N) ou Preferencial (P).<br>
-horario (char[20]) – horário em que a senha foi gerada.<br>
+Cada registro de atendimento possui os seguintes campos:<strong>senha, tipo, horario</strong>
