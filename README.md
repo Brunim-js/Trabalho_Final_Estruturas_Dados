@@ -4,3 +4,5 @@ Repositório do grupo para entrega do trabalho final da disciplina Estruturas de
 Curso: Sistemas de Informação – UniJorge<br>
 Professor: Nirton Afonso
 ---
+
+##Integrantes:
