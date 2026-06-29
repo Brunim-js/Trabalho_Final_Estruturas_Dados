@@ -45,11 +45,11 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 |Opção| Descrição |
 |------|--------|
 | 1 | Cadastrar |
-| 2 | Buscar Musica |
-| 3 | Editar Musica |
-| 4 | Excluir Musica |
-| 5 | Listar Musicas |
-| 0 | Encerrar o Programa (Salva Automaticamente) |
+| 2 | Buscar musica |
+| 3 | Editar musica |
+| 4 | Excluir musica |
+| 5 | Listar musicas |
+| 0 | Encerrar o programa |
 
 ### Como Compilar e Executar: 
 Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
@@ -108,7 +108,7 @@ Observação: Foi feito o extra de função para estatisticas.
 
 |Opção| Descrição |
 |------|--------|
-| 1 | Gerar Senha |
+| 1 | Gerar senha |
 | 2 | Chamar proxima senha |
 | 3 | Exibir filas |
 | 4 | Buscar senha |
