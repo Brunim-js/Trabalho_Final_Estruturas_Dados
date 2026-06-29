@@ -73,17 +73,20 @@ O programa simula uma pilha de chamadas de emergência utilizando o comportament
 
 |Opção| Descrição |
 |------|--------|
-| 1 | bla |
-| 2 | ble |
-| 3 | bli |
-| 4 | blo |
-| 5 | blu |
-| 0 |blx |
+| 1 | Registrar chamada |
+| 2 | Atender Chamada |
+| 3 | Consultar topo |
+| 4 | Listar chamadas |
+| 5 | Salvar em CSV |
+| 6 | Carregar CSV |
+| 0 | Sair |
 
 
 ### Como Compilar e Executar: 
-Certifique-se de ter o GCC instalado. No terminal, execute: <br>
+Pelo aplicativo CLion<br>.
+Certifique-se de ter o CLion 2026.1.3 e execute o codigo <br>
 
+Pelo VS Code: 
 ```bash
 bla bla bla
 ```
