@@ -124,3 +124,9 @@ Entre os testes realizados destacam-se:
 - Verificação do limite máximo de 100 registros;
 - Salvamento e carregamento automático dos arquivos CSV;
 - Validação da integridade dos dados após reinicialização dos programas.
+
+## 7. Conclusão
+
+Os três projetos atenderam aos requisitos propostos para o trabalho final da disciplina, demonstrando a aplicação prática das principais estruturas lineares estudadas ao longo do semestre.
+A utilização de vetores de struct possibilitou a implementação de listas simples, pilhas e filas de forma organizada e eficiente, enquanto a persistência dos dados em arquivos CSV tornou os sistemas mais completos e próximos de aplicações reais.
+O desenvolvimento deste trabalho contribuiu para consolidar conhecimentos relacionados às operações fundamentais das estruturas de dados, análise de complexidade e manipulação de arquivos, reforçando conceitos essenciais para a formação na área de desenvolvimento de software.
