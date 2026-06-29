@@ -53,3 +53,8 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 
 ### Como Compilar e Executar: 
 
+No VS Code:
+'''bash
+gcc main.c -o playlist
+.\playlist.exe
+'''bash
