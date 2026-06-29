@@ -90,9 +90,10 @@ Pelo VS Code:<br>
 Certifique-se de ter instalado o complilador MSYS2 UCRT64 e execute:<br>
 
 ```bash
-bla bla bla
+gcc chamadas_emergencia.c -o chamadas_emergencia
+.\chamadas_emergencia
 ```
-No Windows: alguma coisa.exe
+No Windows: chamadas_emergencia.exe
 
 ---
 
