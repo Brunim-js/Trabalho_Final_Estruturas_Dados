@@ -61,3 +61,11 @@ O sistema também permite consultar a chamada presente no topo da pilha sem remo
 
 ### 3.4 Operações e Complexidade
 
+| Operação | Complexidade |
+|:---------|:------------:|
+| Registrar chamada (Push) | O(1) |
+| Atender chamada (Pop) | O(1) |
+| Consultar topo (Peek) | O(1) |
+| Listagem | O(n) |
+
+
