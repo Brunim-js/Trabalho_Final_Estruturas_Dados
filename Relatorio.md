@@ -66,7 +66,7 @@ O sistema também permite consultar a chamada presente no topo da pilha sem remo
 | Registrar chamada (Push) | O(1) |
 | Atender chamada (Pop) | O(1) |
 | Consultar topo (Peek) | O(1) |
-| Listagem | O(n) |
+| Listar todas as chamadas | O(n) |
 
 ## 4. Trabalho C – Atendimento Bancário
 
