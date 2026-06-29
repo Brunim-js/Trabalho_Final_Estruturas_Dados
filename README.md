@@ -44,9 +44,9 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 
 |Opção| Descrição |
 |------|--------|
-| 1 | A1 - Playlist de musicas |
-| 2 | B2 - Chamadas de Emergências |
-| 3 | C1 - Atendimento Bancario |
-| 4 | A1 - Playlist de musicas |
-| 5 | B2 - Chamadas de Emergências |
-| 0 | C1 - Atendimento Bancario |
+| 1 | Cadastrar |
+| 2 | Buscar Musica |
+| 3 | Editar Musica |
+| 4 | Excluir Musica |
+| 5 | Listar Musicas |
+| 0 | Encerrar o Programa |
