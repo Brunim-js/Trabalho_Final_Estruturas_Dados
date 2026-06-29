@@ -29,3 +29,9 @@ Professor: Nirton Afonso
 ## Sobre a Versão Entregue:
 
 Seguindo as orientações do professor (18/06/2026), posteriormente reforçadas, este projeto foi desenvolvido utilizando vetores de struct para implementar listas simples, pilhas simples e filas simples/circulares, não havendo necessidade de alocação dinâmica.
+
+---
+
+## Trabalho A - Playlist de Músicas:
+
+#### Descrição:
