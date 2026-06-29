@@ -1,4 +1,4 @@
-# Trabalho Final -Estruturas Dados
+# Trabalho Final - Estruturas Dados
 
 Repositório do grupo para entrega do trabalho final da disciplina Estruturas de Dados.<br>
 Curso: Sistemas de Informação – UniJorge<br>
