@@ -52,6 +52,7 @@ Cada registro de música contém os seguintes campos: <strong>ID, título, artis
 | 0 | Encerrar o Programa (Salva Automaticamente) |
 
 ### Como Compilar e Executar: 
+Certifique-se de ter instalado o complilador MSYS2 UCRT64<br>
 
 No VS Code:
 ```bash
@@ -59,3 +60,12 @@ gcc main.c -o playlist
 .\playlist.exe
 ```
 No Windows: playlist.exe
+
+---
+
+## Trabalho B - Chamadas de Emergências 
+
+### Descrição: 
+
+O programa simula uma pilha de chamadas de emergência utilizando o comportamento LIFO (Last In, First Out). Permite registrar, atender, consultar e listar chamadas, além de salvar e carregar automaticamente os dados em um arquivo CSV para garantir sua persistência.
+
