@@ -38,4 +38,4 @@ Seguindo as orientações do professor (18/06/2026), posteriormente reforçadas,
 
 Sistema de gerenciamento de uma playlist musical implementado com vetor de struct, utilizando uma lista simples. Cada música é armazenada em uma posição do vetor, mantendo a ordem em que foi cadastrada. A playlist possui capacidade máxima para 100 músicas.
 
-Cada registro de música contém os seguintes campos: ID, título, artista, duração (MM:SS) e gênero.
+Cada registro de música contém os seguintes campos: <strong>ID, título, artista, duração (MM:SS) e gênero<strong>.
