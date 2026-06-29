@@ -68,4 +68,38 @@ O sistema também permite consultar a chamada presente no topo da pilha sem remo
 | Consultar topo (Peek) | O(1) |
 | Listagem | O(n) |
 
+## 4. Trabalho C – Atendimento Bancário
+
+### 4.1 Objetivo
+
+O Trabalho C consiste na implementação de um sistema de atendimento bancário utilizando duas filas distintas: uma fila simples para atendimentos convencionais e uma fila circular para atendimentos preferenciais.
+
+### 4.2 Estrutura de Dados
+
+O sistema utiliza dois vetores de struct, ambos com capacidade máxima de 100 registros.
+Cada atendimento possui os seguintes campos:
+
+- Senha
+- Tipo de atendimento
+- Horário
+
+A fila convencional foi implementada utilizando uma fila simples, enquanto a fila preferencial utiliza uma fila circular, permitindo o reaproveitamento das posições liberadas durante a execução do programa.
+
+### 4.3 Funcionamento
+
+Sempre que uma nova senha é gerada, ela é direcionada para a fila correspondente ao seu tipo de atendimento.
+Durante o atendimento, o sistema verifica inicialmente a fila preferencial. Caso existam senhas aguardando atendimento, elas possuem prioridade sobre a fila convencional. Somente quando a fila preferencial estiver vazia os atendimentos convencionais são realizados.
+
+Além das operações básicas de gerenciamento das filas, foi implementado um módulo adicional de estatísticas para consulta das informações referentes aos atendimentos realizados.
+
+### 4.4 Operações e Complexidade
+
+| Operação | Complexidade |
+|:---------|:------------:|
+| Gerar senha | O(1) |
+| Chamar próxima senha | O(1) |
+| Buscar senha | O(n) |
+| Cancelar senha | O(n) |
+| Exibir filas | O(n) |
+| Estatísticas | O(n) |
 
