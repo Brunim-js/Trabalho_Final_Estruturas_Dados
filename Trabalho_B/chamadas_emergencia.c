@@ -195,7 +195,7 @@ int main() {
     do {
         menu();
         scanf("%d", &opcao);
-        getchar(); /* limpa o buffer do teclado */
+        getchar();
 
         switch (opcao) {
 
