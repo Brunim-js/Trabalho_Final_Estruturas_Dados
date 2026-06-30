@@ -3,7 +3,8 @@
 #include <string.h>
 
 #define MAX 100
-#define ARQUIVO_CSV "chamadas.csv"
+
+#define ARQUIVO "chamadas.csv"
 
 typedef struct {
     int  protocolo;
@@ -15,248 +16,205 @@ typedef struct {
 Chamada pilha[MAX];
 int topo = -1;
 
-int pilhaVazia(void) {
+int pilhaVazia() {
     return topo == -1;
 }
 
-int pilhaCheia(void) {
+int pilhaCheia() {
     return topo == MAX - 1;
 }
 
 int protocoloExiste(int protocolo) {
-    for (int i = 0; i <= topo; i++) {
+    int i;
+    for (i = 0; i <= topo; i++) {
         if (pilha[i].protocolo == protocolo)
             return 1;
     }
     return 0;
 }
 
-int push(int protocolo, const char *local, const char *tipo, const char *horario) {
+void push(int protocolo, char local[], char tipo[], char horario[]) {
+
     if (pilhaCheia()) {
-        printf("[ERRO] Pilha cheia! Nao e possivel registrar mais chamadas.\n");
-        return 0;
+        printf("[ERRO] Pilha cheia!\n");
+        return;
     }
+
     if (protocoloExiste(protocolo)) {
-        printf("[ERRO] Protocolo %d ja existe na pilha!\n", protocolo);
-        return 0;
+        printf("[ERRO] Protocolo %d ja existe!\n", protocolo);
+        return;
     }
+
     topo++;
     pilha[topo].protocolo = protocolo;
-    strncpy(pilha[topo].local,    local,    sizeof(pilha[topo].local)    - 1);
-    strncpy(pilha[topo].tipo,     tipo,     sizeof(pilha[topo].tipo)     - 1);
-    strncpy(pilha[topo].horario,  horario,  sizeof(pilha[topo].horario)  - 1);
-    
-    pilha[topo].local[sizeof(pilha[topo].local)   - 1] = '\0';
-    pilha[topo].tipo[sizeof(pilha[topo].tipo)     - 1] = '\0';
-    pilha[topo].horario[sizeof(pilha[topo].horario)- 1] = '\0';
+    snprintf(pilha[topo].local,    sizeof(pilha[topo].local),    "%s", local);
+    snprintf(pilha[topo].tipo,     sizeof(pilha[topo].tipo),     "%s", tipo);
+    snprintf(pilha[topo].horario,  sizeof(pilha[topo].horario),  "%s", horario);
 
-    printf("[OK] Chamada %d registrada com sucesso!\n", protocolo);
-    return 1;
+    printf("[OK] Chamada %d registrada!\n", protocolo);
 }
 
-int pop(Chamada *removida) {
+void pop() {
     if (pilhaVazia()) {
         printf("[ERRO] Pilha vazia! Nenhuma chamada para atender.\n");
-        return 0;
+        return;
     }
-    *removida = pilha[topo];
+
+    printf("\n[OK] Chamada atendida:\n");
+    printf("  Protocolo : %d\n", pilha[topo].protocolo);
+    printf("  Local     : %s\n", pilha[topo].local);
+    printf("  Tipo      : %s\n", pilha[topo].tipo);
+    printf("  Horario   : %s\n", pilha[topo].horario);
+
     topo--;
-    return 1;
 }
 
-int peek(Chamada *topo_chamada) {
+void peek() {
     if (pilhaVazia()) {
-        printf("[ERRO] Pilha vazia! Nenhuma chamada no topo.\n");
-        return 0;
+        printf("[ERRO] Pilha vazia!\n");
+        return;
     }
-    *topo_chamada = pilha[topo];
-    return 1;
+
+    printf("\n[INFO] Proxima chamada a ser atendida:\n");
+    printf("  Protocolo : %d\n", pilha[topo].protocolo);
+    printf("  Local     : %s\n", pilha[topo].local);
+    printf("  Tipo      : %s\n", pilha[topo].tipo);
+    printf("  Horario   : %s\n", pilha[topo].horario);
 }
 
-void imprimirChamada(const Chamada *c) {
-    printf("  Protocolo : %d\n",  c->protocolo);
-    printf("  Local     : %s\n",  c->local);
-    printf("  Tipo      : %s\n",  c->tipo);
-    printf("  Horario   : %s\n",  c->horario);
-}
+void listarPilha() {
+    int i;
 
-void listarPilha(void) {
     if (pilhaVazia()) {
         printf("[INFO] Pilha vazia.\n");
         return;
     }
-    printf("\n========== PILHA DE CHAMADAS (topo -> base) ==========\n");
-    for (int i = topo; i >= 0; i--) {
-        printf("--- Posicao %d %s---\n", i, (i == topo) ? "[TOPO] " : "");
-        imprimirChamada(&pilha[i]);
+
+    printf("\n===== CHAMADAS (topo -> base) =====\n");
+    for (i = topo; i >= 0; i--) {
+        if (i == topo)
+            printf("--- [TOPO] ---\n");
+        else
+            printf("--- Posicao %d ---\n", i);
+
+        printf("  Protocolo : %d\n", pilha[i].protocolo);
+        printf("  Local     : %s\n", pilha[i].local);
+        printf("  Tipo      : %s\n", pilha[i].tipo);
+        printf("  Horario   : %s\n", pilha[i].horario);
     }
-    printf("=======================================================\n");
+    printf("===================================\n");
 }
 
+void salvarCSV() {
+    int i;
+    FILE *fp = fopen(ARQUIVO, "w");
 
-void salvarCSV(void) {
-    FILE *fp = fopen(ARQUIVO_CSV, "w");
-    if (!fp) {
-        printf("[ERRO] Nao foi possivel abrir o arquivo para escrita.\n");
+    if (fp == NULL) {
+        printf("[ERRO] Nao foi possivel salvar o arquivo.\n");
         return;
     }
 
     fprintf(fp, "protocolo,local,tipo,horario\n");
 
-    for (int i = 0; i <= topo; i++) {
+    for (i = 0; i <= topo; i++) {
         fprintf(fp, "%d,%s,%s,%s\n",
-                pilha[i].protocolo,
-                pilha[i].local,
-                pilha[i].tipo,
-                pilha[i].horario);
+            pilha[i].protocolo,
+            pilha[i].local,
+            pilha[i].tipo,
+            pilha[i].horario);
     }
+
     fclose(fp);
-    printf("[OK] Pilha salva em '%s'.\n", ARQUIVO_CSV);
+    printf("[OK] Pilha salva em '%s'.\n", ARQUIVO);
 }
 
-void carregarCSV(void) {
-    FILE *fp = fopen(ARQUIVO_CSV, "r");
-    if (!fp) {
-        printf("[INFO] Arquivo '%s' nao encontrado. Iniciando pilha vazia.\n", ARQUIVO_CSV);
-        return;
-    }
-
+void carregarCSV() {
     char linha[200];
+    char *campo;
+    FILE *fp = fopen(ARQUIVO, "r");
 
-    if (!fgets(linha, sizeof(linha), fp)) {
-        fclose(fp);
+    if (fp == NULL) {
+        printf("[INFO] Nenhum arquivo encontrado. Iniciando pilha vazia.\n");
         return;
     }
 
-    topo = -1; 
-    int carregados = 0;
+    topo = -1;
+
+    fgets(linha, sizeof(linha), fp);
 
     while (fgets(linha, sizeof(linha), fp)) {
 
         linha[strcspn(linha, "\n")] = '\0';
-        if (strlen(linha) == 0) continue;
 
         Chamada c;
-        char proto_str[20];
 
+        campo = strtok(linha, ",");
+        c.protocolo = atoi(campo);
 
-        char *tok = strtok(linha, ",");
-        if (!tok) continue;
-        strncpy(proto_str, tok, sizeof(proto_str) - 1);
-        proto_str[sizeof(proto_str) - 1] = '\0';
-        c.protocolo = atoi(proto_str);
+        campo = strtok(NULL, ",");
+        snprintf(c.local, sizeof(c.local), "%s", campo);
 
-        tok = strtok(NULL, ",");
-        if (!tok) continue;
-        strncpy(c.local, tok, sizeof(c.local) - 1);
-        c.local[sizeof(c.local) - 1] = '\0';
+        campo = strtok(NULL, ",");
+        snprintf(c.tipo, sizeof(c.tipo), "%s", campo);
 
-        tok = strtok(NULL, ",");
-        if (!tok) continue;
-        strncpy(c.tipo, tok, sizeof(c.tipo) - 1);
-        c.tipo[sizeof(c.tipo) - 1] = '\0';
-
-        tok = strtok(NULL, ",");
-        if (!tok) continue;
-        strncpy(c.horario, tok, sizeof(c.horario) - 1);
-        c.horario[sizeof(c.horario) - 1] = '\0';
+        campo = strtok(NULL, ",");
+        snprintf(c.horario, sizeof(c.horario), "%s", campo);
 
         if (!pilhaCheia()) {
             topo++;
             pilha[topo] = c;
-            carregados++;
-        } else {
-            printf("[AVISO] Pilha cheia durante carregamento. Alguns registros ignorados.\n");
-            break;
         }
     }
 
     fclose(fp);
-    printf("[OK] %d chamada(s) carregada(s) de '%s'.\n", carregados, ARQUIVO_CSV);
+    printf("[OK] Dados carregados de '%s'.\n", ARQUIVO);
 }
 
-int lerInteiro(const char *prompt) {
-    char buf[50];
-    int valor;
-    while (1) {
-        printf("%s", prompt);
-        if (fgets(buf, sizeof(buf), stdin)) {
-            if (sscanf(buf, "%d", &valor) == 1)
-                return valor;
-        }
-        printf("[ERRO] Entrada invalida. Digite um numero inteiro.\n");
-    }
-}
-
-void lerString(const char *prompt, char *dest, int tamanho) {
-    printf("%s", prompt);
-    if (fgets(dest, tamanho, stdin)) {
-        dest[strcspn(dest, "\n")] = '\0';
-    }
-}
-
-void menu(void) {
-    printf("\n=======================================\n");
-    printf("   SISTEMA DE CHAMADAS DE EMERGENCIA  \n");
-    printf("=======================================\n");
-    printf(" 1. Registrar chamada           \n");
-    printf(" 2. Atender chamada              \n");
-    printf(" 3. Consultar topo              \n");
-    printf(" 4. Listar todas as chamadas          \n");
-    printf(" 5. Salvar em CSV                     \n");
-    printf(" 6. Carregar de CSV                   \n");
-    printf(" 0. Sair                              \n");
-    printf("=======================================\n");
+void menu() {
+    printf("\n=============================\n");
+    printf("  CHAMADAS DE EMERGENCIA\n");
+    printf("=============================\n");
+    printf(" 1. Registrar chamada (push)\n");
+    printf(" 2. Atender chamada   (pop)\n");
+    printf(" 3. Consultar topo    (peek)\n");
+    printf(" 4. Listar chamadas\n");
+    printf(" 5. Salvar em CSV\n");
+    printf(" 6. Carregar CSV\n");
+    printf(" 0. Sair\n");
+    printf("=============================\n");
     printf("Opcao: ");
 }
 
-int main(void) {
+int main() {
     int opcao;
+    int proto;
+    char local[50], tipo[30], horario[20];
 
     carregarCSV();
 
     do {
         menu();
-
-        char buf[10];
-        fgets(buf, sizeof(buf), stdin);
-        sscanf(buf, "%d", &opcao);
+        scanf("%d", &opcao);
+        getchar(); /* limpa o buffer do teclado */
 
         switch (opcao) {
 
-            case 1: {
-                int proto;
-                char local[50], tipo[30], horario[20];
-
+            case 1:
                 printf("\n--- Registrar Chamada ---\n");
-                proto = lerInteiro("Protocolo (numero unico): ");
-                lerString("Local da emergencia    : ", local,   sizeof(local));
-                lerString("Tipo da ocorrencia     : ", tipo,    sizeof(tipo));
-                lerString("Horario (HH:MM)        : ", horario, sizeof(horario));
-
+                printf("Protocolo : "); scanf("%d", &proto); getchar();
+                printf("Local     : "); fgets(local,   sizeof(local),   stdin); local[strcspn(local,     "\n")] = '\0';
+                printf("Tipo      : "); fgets(tipo,    sizeof(tipo),    stdin); tipo[strcspn(tipo,       "\n")] = '\0';
+                printf("Horario   : "); fgets(horario, sizeof(horario), stdin); horario[strcspn(horario, "\n")] = '\0';
                 push(proto, local, tipo, horario);
                 break;
-            }
 
-            case 2: {
-                Chamada atendida;
-                printf("\n--- Atender Chamada ---\n");
-                if (pop(&atendida)) {
-                    printf("[OK] Chamada atendida e removida da pilha:\n");
-                    imprimirChamada(&atendida);
-                }
+            case 2:
+                pop();
                 break;
-            }
 
-            case 3: {
-                Chamada topo_chamada;
-                printf("\n--- Consultar Topo da Pilha ---\n");
-                if (peek(&topo_chamada)) {
-                    printf("[INFO] Proxima chamada a ser atendida:\n");
-                    imprimirChamada(&topo_chamada);
-                }
+            case 3:
+                peek();
                 break;
-            }
 
             case 4:
                 listarPilha();
@@ -271,13 +229,12 @@ int main(void) {
                 break;
 
             case 0:
-                printf("\nSalvando dados antes de sair...\n");
                 salvarCSV();
-                printf("Encerrando o sistema. Ate logo!\n");
+                printf("Encerrando. Ate logo!\n");
                 break;
 
             default:
-                printf("[ERRO] Opcao invalida. Tente novamente.\n");
+                printf("[ERRO] Opcao invalida.\n");
         }
 
     } while (opcao != 0);
